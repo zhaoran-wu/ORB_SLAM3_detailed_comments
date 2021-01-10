@@ -38,7 +38,6 @@ Sim3Solver::Sim3Solver(KeyFrame *pKF1, KeyFrame *pKF2, const vector<MapPoint *> 
     pCamera1(pKF1->mpCamera), pCamera2(pKF2->mpCamera)
 {   
 
-    //! bug : false与true 反了---> 导致后面依然只使用了pKF2中能匹配的点
     bool bDifferentKFs = false;
     if(vpKeyFrameMatchedMP.empty())
     {

@@ -840,7 +840,7 @@ bool LoopClosing::DetectCommonRegionsFromBoW(std::vector<KeyFrame*> &vpBowCand, 
                 bFixedScale=false;
 
             // 初始化sim3 solver
-            // Sim3Solver 的接口与orbslam2略有不同, 因为现在是1-N的对应关系, 但Sim3Solver貌似有bug, 实际上仍然是orbslam2?
+            // Sim3Solver 的接口与orbslam2略有不同, 因为现在是1-N的对应关系
             Sim3Solver solver = Sim3Solver(mpCurrentKF, pMostBoWMatchesKF, vpMatchedPoints, bFixedScale, vpKeyFrameMatchedMP);
             //Sim3Solver Ransac 置信度0.99，至少20个inliers 最多300次迭
             solver.SetRansacParameters(0.99, nBoWInliers, 300); // at least 15 inliers
